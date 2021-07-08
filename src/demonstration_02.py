@@ -9,6 +9,22 @@ Examples:
 - single_number([5,2,3,2,3]) -> 5
 - single_number([10]) -> 10
 """
-def single_number(nums):
-    # Your code here
 
+
+def single_number(nums):
+    d = {}
+    
+    for num in nums:
+        d[num] = 0
+
+    for i in nums:
+        d[i] += 1
+
+    for k, v in d.items():
+        if v == 1:
+            return k
+
+# tests
+print(single_number([3,3,2])) # 2
+print(single_number([5,2,3,2,3])) # 5
+print(single_number([10])) # 10
